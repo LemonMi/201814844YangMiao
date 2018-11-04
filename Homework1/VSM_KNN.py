@@ -215,7 +215,14 @@ if __name__=="__main__":
         dist, indices = ball_tree.query(test_vector[i].toarray(), k=5)
         indices = np.array(indices[0])
         vote_list = train_label[indices]
-        vote_dict = collections.Counter(vote_list)
+        vote_dict = {}
+        weight = 1/ (dist[0]*dist[0])
+        for idx, key in enumerate(vote_list):
+            if(key in vote_dict.keys()):
+                vote_dict[key] += weight[idx]
+            else:
+                vote_dict[key] = weight[idx]
+        # vote_dict = collections.Counter(vote_list)
         predict_label = max(zip(vote_dict.values(), vote_dict.keys()))
         print("%d: test_label:%s vote_status:%s predict_label:%s"%(total_num, tmp_test_label, vote_list, predict_label))
         
