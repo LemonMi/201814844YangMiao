@@ -253,7 +253,7 @@ if __name__=="__main__":
     #         tmp_train_vector = train_vector[j]
     #         norm_tmp_train_vector = pow(tmp_train_vector.power(2).sum(), 1/2)
 
-    #         distance = tmp_train_vector.multiply(tmp_test_vector).sum() / (norm_tmp_test_vector * norm_tmp_train_vector)
+    #         distance = tmp_train_vector.multiply(tmp_test_vector).sum()
     #         vote_label.append(tmp_train_label)
     #         vote_distance.append(distance)
 
