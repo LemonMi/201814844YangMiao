@@ -34,7 +34,7 @@ python -u VSM_KNN.py > output.log
 
 + 计算测试集中的Vector到训练集中所有Vector的距离。
 + 在训练集中，选取Cosine距离当前测试数据最近的k(k=5)个数据的label。
-+ 根据距离给每个label的vote赋予不同的权重：$w=\frac{1}{d^2}$
++ 根据距离给每个label的vote赋予不同的权重：w = 1 / d^2
 + 选择投票最高的label作为当前测试数据的label，从而实现分类。
 + 利用sklearn.neighbor的BallTree提高算法效率。
 
