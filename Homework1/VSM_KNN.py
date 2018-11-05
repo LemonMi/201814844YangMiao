@@ -274,6 +274,6 @@ if __name__=="__main__":
 
     # print("true_num:%d total_num:%d accuracy:%f"%(true_num, total_num, float(true_num) / total_num))
 
-    end = time.time()
-    internal = end - begin
-    print("The KNN has finished: it takes %fs"%(internal))
+    # end = time.time()
+    # internal = end - begin
+    # print("The KNN has finished: it takes %fs"%(internal))
