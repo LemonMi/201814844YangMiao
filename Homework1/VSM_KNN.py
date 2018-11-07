@@ -134,7 +134,7 @@ if __name__=="__main__":
     # dir_path = './20news-18828'
     # save_file_dict_path = './file_dict_folder'
     # file_path = get_file_path(dir_path)
-    # get_file_dict(file_path, save_file_dict_path)
+    # save_file_dict(file_path, save_file_dict_path)
     # end = time.time()
     # print("The file dict generation has finished: it takes %fs"%(end - begin))
 
