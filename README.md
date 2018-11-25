@@ -20,7 +20,7 @@ python -u VSM_KNN.py > output.log
 - Python 3.6(Anaconda)
 - CPU-only
 
-#### 实验内容
+#### 实验步骤
 
 ##### VSM模型
 
@@ -38,3 +38,38 @@ python -u VSM_KNN.py > output.log
 + 选择投票最高的label作为当前测试数据的label，从而实现分类。
 + 利用sklearn.neighbor的BallTree提高算法效率。
 
+
+
+### Homework2
+
+#### 运行代码
+
+~~~python
+python -u NBC.py > result.log
+~~~
+
+#### 实验内容
+
+实现朴素贝叶斯分类器，测试其在20 Newsgroups数据集上的效果。
+
+#### 实验环境
+
+- Windows 8.1
+- Python 3.6(Anaconda)
+- CPU-only
+
+#### 实验步骤
+
+__步骤1:__遍历training_path，计算所有文件的个数total_count，字典 class_file_count保存每一类文件的个数，以及字符串列表保存所有类的名字class_name。
+
+__步骤2:__将global dict中的每个单词映射到下标；将class name中的每一个类名映射到下标。
+
+__步骤3:__遍历training_path对应文件的字典，根据步骤2生成的映射关系，建立一个大小为(class_num, term_num)的ref_matrix保存每一类中每个单词出现的频数
+
+__步骤4:__遍历testing_path，对testing_path的每一个数据，根据公式
+
+P(y)=类别为y的文件个数 / 所有文件的个数
+
+P(x_j|y)=(类别为y的文件中词语x_j出现的次数+1) / (类别为y的文件中所有词语的次数+被统计的词表中词语个数)
+
+分别计算该数据属于每个类别的概率。
