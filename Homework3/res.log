@@ -1,0 +1,10 @@
+K-Means score:0.779488
+Affinity Propogation score:0.794534
+Mean-Shift score:0.727855
+Spectral Clustering score:0.780187
+Agglomerative Clustering-ward score:0.783041
+Agglomerative Clustering-complete score:0.755440
+Agglomerative Clustering-average score:0.896244
+DBSCAN score:0.656964
+Gaussian Mixtures score:0.790252
+Birch score:0.800036
