@@ -73,3 +73,36 @@ P(y)=类别为y的文件个数 / 所有文件的个数
 P(x_j|y)=(类别为y的文件中词语x_j出现的次数+1) / (类别为y的文件中所有词语的次数+被统计的词表中词语个数)
 
 分别计算该数据属于每个类别的概率。
+
+
+
+### Homework3
+
+#### 运行代码
+
+~~~python
+python sklearn_cluster.py > res.log
+~~~
+
+#### 实验内容
+
+测试sklearn中以下聚类算法在tweets数据集上的聚类效果。k-means, AffinityPropagation, mean-shift, SpectralClustering, AgglomerativeClustering, DBSCAN, GaussianMixtures。
+
+#### 实验环境
+
+- ubuntu16.04
+- python3.7
+- sklearn 0.19.2
+
+#### 实验步骤
+
+- sklearn.cluster.KMeans  => n_clusters 聚类个数  random_state 随机初始化
+- sklearn.cluster.AffinityPropagation ==> damping 阻尼系数，防止抖动
+- sklearn.cluster.MeanShift ==> bandwidth 高斯核的参数(类似于决定高纬球的半径) bin_seeding 优化加速
+- sklearn.cluster.SpectralClustering ==> n_clusters 聚类个数 random_state 随机初始化
+- sklearn.cluster.AgglomerativeClustering ==> n_clusters 聚类个数 linkage 确定计算距离的方法(ward, average, complete)
+- sklearn.cluster.DBSCAN ==> eps 确定邻域的大小 min_samples 密集区域所需最小样本点
+- sklearn.mixture.GaussianMixture ==> n_components 聚类个数
+- sklearn.cluster.Birch ==> n_clusters 聚类个数 threshold 高维球半径 branching_factor 分支个数
+
+通过sklearn.metrics.cluster的normalized_mutual_info_score方法，计算得分，判断聚类好坏。
